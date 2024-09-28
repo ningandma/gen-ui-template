@@ -24,7 +24,7 @@ def weather_data(city: str, state: str, country: str = "usa") -> dict:
         raise ValueError("Missing GEOCODE_API_KEY secret.")
 
     geocode_url = f"https://geocode.xyz/{city.lower()},{state.lower()},{country.lower()}?json=1&auth={geocode_api_key}"
-    geocode_response = requests.get(geocode_url)
+    geocode_response =  requests.get(geocode_url)
     if not geocode_response.ok:
         print("No geocode data found.")
         raise ValueError("Failed to get geocode data.")
